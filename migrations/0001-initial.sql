@@ -1,0 +1,6 @@
+CREATE TABLE records(
+    id SERIAL NOT NULL PRIMARY KEY,
+    date TIMESTAMP NOT NULL,
+    name TEXT NOT NULL,
+    busyness INT NOT NULL
+)
