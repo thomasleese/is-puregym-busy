@@ -3,9 +3,20 @@ import os
 import flask
 import psycopg2
 
+from chart import BusynessChart
+
 
 app = flask.Flask(__name__)
 database = psycopg2.connect(os.environ['DATABASE_URL'])
+
+
+def get_colour(index):
+    if 0 <= index <= 20:
+        return '#5cb85c'
+    elif 20 < index <= 50:
+        return '#f0ad4e'
+    else:
+        return '#d9534f'
 
 
 def get_busyness_data():
@@ -31,8 +42,9 @@ def get_busyness_data():
 @app.route('/')
 def index():
     rows = get_busyness_data()
+    chart = BusynessChart(rows)
 
-    return str(rows)
+    return flask.render_template('index.html', get_colour=get_colour, chart=chart)
 
 
 if __name__ == '__main__':
