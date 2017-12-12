@@ -5,10 +5,10 @@ name = "pypi"
 
 [packages]
 
-puregym = {git = "https://github.com/thomasleese/pypuregym"}
 flask = "*"
 "psycopg2" = "*"
 gunicorn = "*"
+puregym = {git = "https://github.com/thomasleese/pypuregym"}
 
 
 [dev-packages]
