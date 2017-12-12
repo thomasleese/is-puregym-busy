@@ -8,6 +8,7 @@ name = "pypi"
 puregym = {git = "https://github.com/thomasleese/pypuregym"}
 flask = "*"
 "psycopg2" = "*"
+gunicorn = "*"
 
 
 [dev-packages]
