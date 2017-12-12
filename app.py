@@ -11,9 +11,9 @@ database = psycopg2.connect(os.environ['DATABASE_URL'])
 
 
 def get_colour(index):
-    if 0 <= index <= 20:
+    if 0 <= index <= 30:
         return '#5cb85c'
-    elif 20 < index <= 50:
+    elif 30 < index <= 50:
         return '#f0ad4e'
     else:
         return '#d9534f'
